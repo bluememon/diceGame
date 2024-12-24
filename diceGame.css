@@ -1,0 +1,62 @@
+.diceContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.diceContainer .dice {
+    position: relative;
+    border: solid 1px black;
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.diceContainer .dice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+}
+
+.diceContainer .dice.left::before {
+    content: '👈';
+}
+
+.diceContainer .dice.right::before {
+    content: '👉';
+}
+
+.diceContainer .dice.center::before {
+    content: '👊';
+}
+
+.diceContainer .dice.neutro::before {
+    content: '👎';
+}
+
+.rollButtonContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
