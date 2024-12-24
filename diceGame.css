@@ -9,7 +9,7 @@ html, body {
 .gameContainer {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100vw;
     grid-template-rows: 80vh 20vh;
 }
 
@@ -32,14 +32,15 @@ html, body {
 
 .diceContainer .dice {
     position: relative;
-    border: solid 1px black;
+    border: solid 5px black;
     width: 90%;
-    height: 90%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     aspect-ratio: 1/1;
+    border-radius: 20%;
 }
 
 .diceContainer .dice::before {
@@ -98,3 +99,33 @@ html, body {
     font-size: 150%;
 }
 
+@media only screen and (max-width: 1000px) {
+    .diceContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .diceContainer .dice {
+        width: auto;
+        height: 90%;
+    }
+
+    .diceContainer #dice1 {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .diceContainer #dice2 {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .diceContainer #dice3 {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+}
